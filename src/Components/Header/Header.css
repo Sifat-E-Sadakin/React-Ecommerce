@@ -1,6 +1,6 @@
 .header{
     background-color: rgb(44, 35, 35);
-    padding: 0 2rem;
+    padding: 0 02rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,5 +9,10 @@
 }
 
 .anchors a{
-    padding-left: 1rem;
+    padding-left: 01rem;
 }
+@media (max-width: 576px) {
+   .header{
+    width: 100%;
+   }
+  }
