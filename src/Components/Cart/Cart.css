@@ -5,3 +5,10 @@
     position: sticky;
     top: 0;
 }
+@media (max-width:576px) {
+
+    .cart{
+    
+    width: 100%;
+}
+}

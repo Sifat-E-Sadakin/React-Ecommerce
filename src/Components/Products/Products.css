@@ -33,3 +33,21 @@
 .productDetails{
     margin-left: 7px;
 }
+
+@media  (max-width:576px) {
+
+    .products img{
+        width: 200px;
+        height: 200px;
+        margin: 7px;
+        border-radius: 10px;
+    }
+    .products{
+        width: 210px;
+        height: 450px;
+        border: 2px solid rgb(239, 232, 232);
+        border-radius: 10px;
+        position: relative;
+        
+    }
+}
