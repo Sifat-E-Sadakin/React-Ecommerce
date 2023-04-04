@@ -1,6 +1,8 @@
 import React from 'react';
 import Cart from '../Cart/Cart';
 import { useLoaderData } from 'react-router-dom';
+import OrderItem from '../OrderItem/OrderItem';
+import './Order.css'
 
 const Orders = () => {
 
@@ -9,8 +11,18 @@ const Orders = () => {
 
 
     return (
-        <div className='shop'>
-            <h2>{products.length} Order will be displayed here...!  </h2>
+        <div className='order'>
+
+            <div className='orderContainer'>
+
+
+            {
+                products.map(product=> <OrderItem product={product} key={product.id}></OrderItem> )
+            }
+            </div>
+            
+
+
             <Cart cart={products}></Cart>
         </div>
     );

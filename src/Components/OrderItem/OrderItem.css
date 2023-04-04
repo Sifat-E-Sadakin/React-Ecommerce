@@ -1,0 +1,25 @@
+.cartContainer{
+    width: 550px;
+   height: 110px;
+   border: 2px solid rgb(239, 232, 232);
+   border-radius: 10px;
+   margin: 20px;
+   padding: 10px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+.cartContainer img{
+    width: 100px ;
+    height: 100px;
+    padding: 5px;
+    border-radius: 10px;
+}
+.flex{
+    display: flex;
+}
+.btn{
+    cursor: pointer;
+    margin-right: 20px;
+    padding: 10px;
+}
