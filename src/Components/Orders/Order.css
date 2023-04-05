@@ -12,3 +12,9 @@
     display: flex;
     justify-content: space-around;
 }
+@media (max-width: 576px){
+    .order{
+        display: flex;
+        flex-direction: column;
+    }
+}

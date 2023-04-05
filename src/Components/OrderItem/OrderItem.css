@@ -23,3 +23,9 @@
     margin-right: 20px;
     padding: 10px;
 }
+
+@media (max-width: 576px) {
+    .cartContainer{
+        width: 90%;
+    }
+}

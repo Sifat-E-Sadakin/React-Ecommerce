@@ -15,10 +15,13 @@
     "daisyui": "^2.51.5",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
+    "netlify-cli": "^13.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0",
-    "sort-by": "^1.2.0"
+    "sort-by": "^1.2.0",
+    "to": "^0.2.9",
+    "update": "^0.7.4"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
