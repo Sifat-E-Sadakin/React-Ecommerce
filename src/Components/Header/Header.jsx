@@ -3,6 +3,7 @@ import './Header.css'
 import logo from '../../../images/Logo.svg'
 import ck from '../../../images/Screenshot 2023-03-27 000134.png'
 import { Link } from 'react-router-dom';
+import ActiveLink from '../ActiveLink/ActiveLink';
 
 const Header = () => {
     return (
@@ -11,10 +12,10 @@ const Header = () => {
                 <img src={logo} alt="" />
             </div>
             <div className='anchors'>
-                <Link to="/">Shop</Link>
-                <Link to="/orders">Orders</Link>
-                <Link to="/inventory">Inventory</Link>
-                <Link to="/login">Login</Link>
+                <ActiveLink to="/">Shop</ActiveLink>
+                <ActiveLink to="/orders">Orders</ActiveLink>
+                <ActiveLink to="/inventory">Inventory</ActiveLink>
+                <ActiveLink to="/login">Login</ActiveLink>
             </div>
             
         </div>
