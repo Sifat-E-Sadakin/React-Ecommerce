@@ -5,6 +5,14 @@
     position: sticky;
     top: 0;
 }
+.btn-cc{
+    width: 90%;
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
 @media (max-width:576px) {
 
     .cart{

@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { addToDb, getShoppingCart } from '../../../utilities/fakedb';
+import { addToDb, deleteShoppingCart, getShoppingCart } from '../../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Products from '../Products/Products';
 import './Shop.css'
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee, faTrash } from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -56,19 +59,30 @@ const Shop = () => {
 
     }
 
+    let clearCart= ()=>{
+        setCart([]);
+        deleteShoppingCart();
+    }
+    
+
     return (
         <div className='shop'>
             
             <div className='productContainer'>
                 
             {
-                products.map(product=><Products products={product} atc={atc} ></Products>)
+                products.map(product=><Products products={product} atc={atc} key={product.id} ></Products>)
             }
 
             </div>
            
             <div>
-               <Cart cart={cart}></Cart>
+               <Cart cart={cart} clearCart={clearCart}>
+                <Link to='/orders'>
+                <button className='btn-review'>Review Cart</button>
+                </Link>
+                
+               </Cart>
             </div>
             
         </div>

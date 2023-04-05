@@ -1,8 +1,13 @@
 import React from 'react';
 import './Cart.css'
-const Cart = (props) => {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { deleteShoppingCart } from '../../../utilities/fakedb';
+
+
+const Cart = (props, children) => {
     let {cart}= props
-    console.log(cart);
+    // console.log(cart);
     
     let totalPrice=0;
     let totalShipping=0;
@@ -13,12 +18,12 @@ const Cart = (props) => {
         if(product.quantity==0){
             product.quantity=1;
         }
-      console.log(product.quantity,'pq');
+    //   console.log(product.quantity,'pq');
        totalPrice = totalPrice+ product.price* product.quantity;
        totalShipping = totalShipping+ product.shipping;
        
        quantity= quantity + product.quantity
-        console.log(quantity, product.quantity);
+        // console.log(quantity, product.quantity);
         
     }
 
@@ -26,6 +31,8 @@ const Cart = (props) => {
     tax= totalPrice*7/100
     grandTotal=totalPrice+totalShipping+tax;
     // console.log(totalPrice);
+
+    let clearCart= props.clearCart;
    
 
     return (
@@ -37,6 +44,9 @@ const Cart = (props) => {
              <h5>Total Shipping Charge:{totalShipping} $</h5>
              <h5>Tax: {tax.toFixed(2)} $ </h5>
              <h4>Grand Total: {grandTotal.toFixed(2)} $ </h4>
+             <button className='btn-cc' onClick={clearCart}><span>Clear cart</span>  <FontAwesomeIcon icon={faTrash} /></button>
+             
+             {props.children}
         </div>
     );
 };

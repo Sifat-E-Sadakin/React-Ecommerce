@@ -1,13 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Cart from '../Cart/Cart';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import OrderItem from '../OrderItem/OrderItem';
 import './Order.css'
+import { deleteShoppingCart, getShoppingCart, removeFromDb } from '../../../utilities/fakedb';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCartShopping, faTrash } from '@fortawesome/free-solid-svg-icons'
 
 const Orders = () => {
 
     let products = useLoaderData();
-    // console.log(products);
+    
+    let [finalProducts, setFinalProducts]= useState(products)
+
+    // console.log(finalProducts);
+
+
+    let deleteItem = (id)=>{
+        
+    let finalItem = finalProducts.filter(product => product.id != id);
+    setFinalProducts(finalItem);
+
+    removeFromDb(id);
+        
+      
+    }
+
+    let clearCart= ()=>{
+        setFinalProducts([]);
+        deleteShoppingCart();
+    }
+    
 
 
     return (
@@ -17,13 +40,18 @@ const Orders = () => {
 
 
             {
-                products.map(product=> <OrderItem product={product} key={product.id}></OrderItem> )
+                finalProducts.map(product=> <OrderItem deleteItem={deleteItem} product={product} key={product.id}></OrderItem> )
             }
             </div>
             
 
 
-            <Cart cart={products}></Cart>
+            <Cart cart={finalProducts} clearCart={clearCart}>
+                <Link to='/checkout'>
+                <button className='btn-checkout'><span>Checkout</span><FontAwesomeIcon icon={faCartShopping} /> </button>
+                </Link>
+               
+            </Cart>
         </div>
     );
 };
