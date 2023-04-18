@@ -80,7 +80,7 @@ const Login = () => {
                 <p onClick={recoverPassword} ><u> Forget password</u></p>
                 <p>{err}</p>
                 <button type="submit">Login</button>
-                <button onClick={google} > <img src="/public/google-logo-9808.png" id='logo' alt="" /> Login with Google</button>
+                <button onClick={google} > <img src="./google-logo-9808.png" id='logo' alt="" /> Login with Google</button>
             </form>
             
             

@@ -81,7 +81,7 @@ const SingUp = () => {
                 <input type="password" id="confirmPassword" name="confirmPassword" required />
                 {err}
                 <button type="submit">Submit</button>
-                <button onClick={google}><img src="/public/google-logo-9808.png" id='logo' alt="" /> SingUp With Google</button>
+                <button onClick={google}><img src="./google-logo-9808.png" id='logo' alt="" /> SingUp With Google</button>
                 
                 
                 
