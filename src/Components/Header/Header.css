@@ -5,10 +5,12 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 70px;
+   
     
 }
 .anchors{
     display: flex;
+    align-items: center;
 }
 
 .anchors a{
@@ -18,4 +20,8 @@
    .header{
     width: 100%;
    }
+   .anchors{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
   }
