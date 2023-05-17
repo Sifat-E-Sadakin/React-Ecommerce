@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import './Login.css'
 import { userInfo } from '../UserContext/UserContext';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
@@ -79,6 +79,7 @@ const Login = () => {
                 <input type="password" id="password" name="password" required />
                 <p onClick={recoverPassword} ><u> Forget password</u></p>
                 <p>{err}</p>
+                <p>First Time!!! go for <Link to='/singUp' style={{color:'black'}}>SingUp</Link></p>
                 <button type="submit">Login</button>
                 <button onClick={google} > <img src="./google-logo-9808.png" id='logo' alt="" /> Login with Google</button>
             </form>

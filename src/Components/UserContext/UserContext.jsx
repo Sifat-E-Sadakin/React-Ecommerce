@@ -1,14 +1,23 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithPopup, sendEmailVerification, sendPasswordResetEmail } from "firebase/auth";
 import app from '../Firebase/Firebase.config';
+import { useNavigate } from 'react-router-dom';
 
 export let userInfo = createContext(null)
+
+
 
 const UserContext = ({children}) => {
 
     const auth = getAuth(app);
 
     let googleProvider = new GoogleAuthProvider(app);
+
+   
+
+
+
+
 
     let [loading, setLoading] = useState(true);
 
@@ -37,7 +46,10 @@ const UserContext = ({children}) => {
         let unsubscribe = onAuthStateChanged( auth, newUser=>{
             console.log('from auth',newUser);
             setUser(newUser);
-            setLoading(false)
+           
+            
+            setLoading(false);
+           
         })
 
         return ()=>{

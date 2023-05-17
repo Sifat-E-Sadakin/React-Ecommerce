@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import './SingUp.css'
 import { userInfo } from '../UserContext/UserContext';
 import ReactDOM from 'react-dom'
+import { Link } from 'react-router-dom';
 
 
 const SingUp = () => {
@@ -80,6 +81,7 @@ const SingUp = () => {
                 <label htmlFor="confirmPassword">Confirm Password:</label>
                 <input type="password" id="confirmPassword" name="confirmPassword" required />
                 {err}
+                <p>Have an account!! go to <Link to='/login' style={{color:'black'}}>Login</Link></p>
                 <button type="submit">Submit</button>
                 <button onClick={google}><img src="./google-logo-9808.png" id='logo' alt="" /> SingUp With Google</button>
                 

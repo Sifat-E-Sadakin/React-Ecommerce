@@ -5,7 +5,7 @@ import { faCoffee, faTrash } from '@fortawesome/free-solid-svg-icons'
 
 const OrderItem = (props) => {
     
-let {img, price, name, quantity, id }= props.product;
+let {img, price, name, quantity, _id }= props.product;
 
  let deleteItem= props.deleteItem;
     return (
@@ -22,7 +22,7 @@ let {img, price, name, quantity, id }= props.product;
                 
             </div>
             <div>
-                <button className='btn'  onClick={()=>deleteItem(id)}><FontAwesomeIcon icon={faTrash} /></button>
+                <button className='btn'  onClick={()=>deleteItem(_id)}><FontAwesomeIcon icon={faTrash} /></button>
             </div>
            
            

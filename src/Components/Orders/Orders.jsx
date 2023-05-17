@@ -18,7 +18,7 @@ const Orders = () => {
 
     let deleteItem = (id)=>{
         
-    let finalItem = finalProducts.filter(product => product.id != id);
+    let finalItem = finalProducts.filter(product => product._id != id);
     setFinalProducts(finalItem);
 
     removeFromDb(id);
@@ -40,7 +40,7 @@ const Orders = () => {
 
 
             {
-                finalProducts.map(product=> <OrderItem deleteItem={deleteItem} product={product} key={product.id}></OrderItem> )
+                finalProducts.map(product=> <OrderItem deleteItem={deleteItem} product={product} key={product._id}></OrderItem> )
             }
             </div>
             

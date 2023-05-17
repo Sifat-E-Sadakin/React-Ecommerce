@@ -13,6 +13,11 @@
     margin-top: 10px;
     padding: 5px;
 }
+.btn-page{
+    text-align: center;
+    margin: 20px;
+    
+}
 @media (max-width: 576px) {
     .shop{
         display: grid;
